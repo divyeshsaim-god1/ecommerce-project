@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <!-- Title and nav links -->
     <header class="header-content">
         <h2>ExtremeShopz</h2>
         <nav class="nav-links">
@@ -16,6 +17,7 @@
         </nav>
     </header>
 
+    <!-- categories -->
     <div class="categories">
             <span>household</span>
             <span>skincare</span>
@@ -23,20 +25,21 @@
             <span>kids</span>
     </div>
 
-    <div id="search-btn" class="search-btn">
+    <!-- Search form and button -->
+    <div id="search-form" class="search-form">
             <input id="input-form" type="text" placeholder="search...">
+            <span class="search-btn"><button id="search-btn">search</button></span>
     </div>
 
-    <div class="container">
-        <div class="products-display" id="products-display">
-            <div id="product" class="individual-product">
-                <!-- Going to inject it using JS later -->
-            </div>
-        </div>
-
-        <div class="footer-content">
-            <footer>footer content</footer>
-        </div>
+    <!-- Main container to display the products -->
+    <main class="product-grid">
+            <div id="product" class="product">Product 1</div>
+            <div id="product" class="product">Product 2</div>
+            <div id="product" class="product">Product 3</div>
+            <div id="product" class="product">Product 4</div>
+            <div id="product" class="product">Product 5</div>
+            <div id="product" class="product">Product 5</div>
+        </main>
     </div>
 </body>
 </html>
