@@ -89,19 +89,113 @@ header h2 {
     transition: 0.2s ease;
 }
 
+.grid-title {
+    font-size: 1.8rem;
+    margin: 8px;
+    text-align: center;
+}
+/* Below code is for the display of image */
+
+/* Grid layout */
 .product-grid {
-    margin-top: 12px;
-    padding: 18px;
-    display: grid;
-    /* The magic line for automatic responsiveness */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.product {
-    font-size: 1.3rem;
-    background-color: white;
-    color: var(--secondary-color);
-    height: 18rem;
-    border-radius: 12px;
+/* individual card */
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 300px; /* Adjust this height to your liking */
+  background-color: #f9f9f9; /* Fallback background color */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops the image safely to fill the 300px height */
+  object-position: center; /* Centers the crop area */
+}
+
+/* Text Padding and Typography */
+.product-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Spaces out the text elements */
+}
+
+.product-name {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b12704; /* E-commerce red/orange style */
+  margin: 0;
+}
+
+.product-rating {
+  font-size: 14px;
+  color: #ffa41c; /* Star gold color */
+  margin: 0;
+}
+
+.product-delivery {
+  font-size: 13px;
+  color: #565959;
+  margin: 5px 0 0 0;
+}
+
+.add-del-cart {
+   margin: 8px;
+   display: flex;
+    gap: 130px;
+    
+}
+.add-cart {
+    color: white;
+    background-color:#29ad48;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remove-cart {
+    color: white;
+    background-color: red;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-del-cart button {
+    transition: 0.2s ease;
+}
+
+.add-cart:hover {
+    background-color: darkgreen;
+}
+
+.remove-cart:hover {
+    background-color: maroon;
 }
