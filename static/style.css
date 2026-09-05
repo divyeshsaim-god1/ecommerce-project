@@ -178,7 +178,7 @@ header h2 {
     cursor: pointer;
 }
 
-.remove-cart {
+.del-cart {
     color: white;
     background-color: red;
     border: 1px solid black;
@@ -196,6 +196,6 @@ header h2 {
     background-color: darkgreen;
 }
 
-.remove-cart:hover {
+.del-cart:hover {
     background-color: maroon;
 }

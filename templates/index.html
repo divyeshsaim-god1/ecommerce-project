@@ -11,122 +11,46 @@
     <header class="header-content">
         <h2>ExtremeShopz</h2>
         <nav class="nav-links">
-            <a href="#">HOME</a>
-            <a href="#">CART</a>
+            <a href="index.html">HOME</a>
+            <a href="cart.html">CART (<span id="cart-count-badge">0</span>)</a>
             <a href="#">CONTACT</a>
         </nav>
     </header>
 
     <!-- categories -->
     <div class="categories">
-            <span>household</span>
-            <span>skincare</span>
-            <span>appliances</span>
-            <span>kids</span>
+        <span>household</span>
+        <span>skincare</span>
+        <span>appliances</span>
+        <span>kids</span>
     </div>
 
     <!-- Search form and button -->
     <div id="search-form" class="search-form">
-            <input id="input-form" type="text" placeholder="search...">
-            <span class="search-btn"><button id="search-btn">search</button></span>
+        <input id="input-form" type="text" placeholder="search...">
+        <span class="search-btn"><button id="search-btn">search</button></span>
     </div>
 
     <!-- Main container to display the products -->
-     <h3 class="grid-title">Products</h3>
+    <h3 class="grid-title">Products</h3>
     <main class="product-grid">
-
-
-            <div id="product" class="product-card">
-                <div class="image-wrapper">
+        <div id="product2" class="product-card">
+            <div class="image-wrapper">
                 <img src="../static/p1.jpeg" alt="image 1">
-                </div>
-                <div class="product-info">
-                    <div class="add-del-cart">
-                    <span><button id="remove-cart" class="remove-cart">remove item </button></span>
-                    <span><button id="add-cart" class="add-cart">add to cart</button></span>
-                    </div>
-                    <h3 class="product-name">Product 1</h3>
-                    <p class="product-price">₹2,499</p>
-                    <p class="product-rating">⭐ 4.5 (120 reviews)</p>
-                    <p class="product-delivery">FREE delivery by <b>Tomorrow</b></p>
-                </div>
             </div>
-            <div id="product" class="product-card">
-                <div class="image-wrapper">
-                <img src="../static/p2.jpeg" alt="image 1">
-                </div>
-                <div class="product-info">
-                    <div class="add-del-cart">
-                    <span><button id="remove-cart" class="remove-cart">remove item </button></span>
-                    <span><button id="add-cart" class="add-cart">add to cart</button></span>
-                    </div>
-                    <h3 class="product-name">Product 1</h3>
-                    <p class="product-price">₹2,499</p>
-                    <p class="product-rating">⭐ 4.5 (120 reviews)</p>
-                    <p class="product-delivery">FREE delivery by <b>Tomorrow</b></p>
-                </div>
+            <div class="product-info">
+                <h3 class="product-name">Product 1</h3>
+                <p class="product-price">₹2,499</p>
+                <p class="product-rating">⭐ 4.5 (120 reviews)</p>
+                <p class="product-delivery">FREE delivery by <b>Tomorrow</b></p>
+                <!-- FIXED: Price passed as number 2499, and image path corrected -->
+                <button class="add-to-cart-btn" onclick="addToCart('p1', 'Product 1', 2499, '../static/p1.jpeg')">
+                    Add to Cart
+                </button>
             </div>
-            <div id="product" class="product-card">
-                <div class="image-wrapper">
-                <img src="../static/p3.jpeg" alt="image 1">
-                </div>
-                <div class="product-info">
-                    <div class="add-del-cart">
-                    <span><button id="remove-cart" class="remove-cart">remove item </button></span>
-                    <span><button id="add-cart" class="add-cart">add to cart</button></span>
-                    </div>
-                    <h3 class="product-name">Product 1</h3>
-                    <p class="product-price">₹2,499</p>
-                    <p class="product-rating">⭐ 4.5 (120 reviews)</p>
-                    <p class="product-delivery">FREE delivery by <b>Tomorrow</b></p>
-                </div>
-            </div>
-            <div id="product" class="product-card">
-                <div class="image-wrapper">
-                <img src="../static/p4.jpeg" alt="image 1">
-                </div>
-                <div class="product-info">
-                    <div class="add-del-cart">
-                    <span><button id="remove-cart" class="remove-cart">remove item </button></span>
-                    <span><button id="add-cart" class="add-cart">add to cart</button></span>
-                    </div>
-                    <h3 class="product-name">Product 1</h3>
-                    <p class="product-price">₹2,499</p>
-                    <p class="product-rating">⭐ 4.5 (120 reviews)</p>
-                    <p class="product-delivery">FREE delivery by <b>Tomorrow</b></p>
-                </div>
-            </div>
-            <div id="product" class="product-card">
-                <div class="image-wrapper">
-                <img src="../static/p5.jpeg" alt="image 1">
-                </div>
-                <div class="product-info">
-                    <div class="add-del-cart">
-                    <span><button id="remove-cart" class="remove-cart">remove item </button></span>
-                    <span><button id="add-cart" class="add-cart">add to cart</button></span>
-                    </div>
-                    <h3 class="product-name">Product 1</h3>
-                    <p class="product-price">₹2,499</p>
-                    <p class="product-rating">⭐ 4.5 (120 reviews)</p>
-                    <p class="product-delivery">FREE delivery by <b>Tomorrow</b></p>
-                </div>
-            </div>
-            <div id="product" class="product-card">
-                <div class="image-wrapper">
-                <img src="../static/p6.jpeg" alt="image 1">
-                </div>
-                <div class="product-info">
-                    <div class="add-del-cart">
-                    <span><button id="remove-cart" class="remove-cart">remove item </button></span>
-                    <span><button id="add-cart" class="add-cart">add to cart</button></span>
-                    </div>
-                    <h3 class="product-name">Product 1</h3>
-                    <p class="product-price">₹2,499</p>
-                    <p class="product-rating">⭐ 4.5 (120 reviews)</p>
-                    <p class="product-delivery">FREE delivery by <b>Tomorrow</b></p>
-                </div>
-            </div>
-        </main>
-    </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
 </body>
 </html>
