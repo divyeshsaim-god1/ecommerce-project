@@ -162,40 +162,30 @@ header h2 {
   margin: 5px 0 0 0;
 }
 
-.add-del-cart {
-   margin: 8px;
-   display: flex;
-    gap: 130px;
-    
-}
-.add-cart {
-    color: white;
-    background-color:#29ad48;
-    border: 1px solid black;
+.add-to-cart-btn {
+    border: 1px solid;
     outline: none;
-    border-radius: 8px;
+    border-radius: 6px;
     font-weight: bold;
+    background-color: #ffa41c;
     cursor: pointer;
-}
-
-.del-cart {
-    color: white;
-    background-color: red;
-    border: 1px solid black;
-    outline: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.add-del-cart button {
     transition: 0.2s ease;
 }
 
-.add-cart:hover {
-    background-color: darkgreen;
+.buy-btn {
+    border: 1px solid;
+    outline: none;
+    border-radius: 6px;
+    font-weight: bold;
+    background-color: #fde912;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
 
-.del-cart:hover {
-    background-color: maroon;
+.add-to-cart-btn:hover {
+    background-color: #936014;
+}
+
+.buy-btn:hover {
+    background-color: #a69907;
 }

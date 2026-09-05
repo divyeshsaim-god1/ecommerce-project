@@ -1,36 +1,14 @@
-// fetching 'cart' from localStorage or initialize empty array
-let cart = JSON.parse(localStorage.getItem('my_web_cart')) || [];
-
-// function to add an item to the cart
-function addToCart(id, name, price, image) {
-    const existingItem = cart.find(item => item.id === id);
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({id, name, price, image, quantity: 1});
-    }
-
-    saveCart();
-    updateCartCountNav();
-    alert(`${name} added to cart!`);
+// creating a product object
+const currentProduct = {
+    id:"p1",
+    name: "Product 1",
+    price: 2499,
+    image:"../static/p1.jpeg",
+    quantity: 1
 }
 
-// Save current cart state to localStorage
-function saveCart() {
-    localStorage.setItem('my_web_cart', JSON.stringify(cart));
-}
 
-// update the navbar total item count badge
-function updateCartCountNav() {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const badge = document.getElementById('cart-count-badge');
-    if(badge) {
-        badge.innerText = totalItems;
-    }
-}
-
-// function to display cart items
+// Function to display cart items (Used on cart.html)
 function displayCartItems() {
     const wrapper = document.getElementById('cart-items-wrapper');
     const totalSpan = document.getElementById('cart-total-price');
@@ -70,7 +48,7 @@ function displayCartItems() {
     totalSpan.innerText = `₹${overallTotal}`;
 }
 
-// Function to remove an item completely from the cart
+// Function to remove an item completely from the cart (Used on cart.html)
 function removeFromCart(index) {
     cart.splice(index, 1); 
     saveCart();            
@@ -78,5 +56,14 @@ function removeFromCart(index) {
     updateCartCountNav();  
 }
 
-// Automatically sync the navigation badge count across pages when they load
-updateCartCountNav();
+
+// Buy Now logic specific to clicking the button in index.html
+function buyNow(product) {
+    localStorage.setItem('buyNowItem', JSON.stringify(product));
+    window.location.href = 'checkout.html';
+}
+
+// Attach event listener to the button
+document.getElementById('buy-now-btn').addEventListener('click', () => {
+    buyNow(currentProduct);
+});
