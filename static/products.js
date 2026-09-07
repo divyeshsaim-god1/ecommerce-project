@@ -1,12 +1,105 @@
 // creating a product object
-const currentProduct = {
-    id:"p1",
-    name: "Product 1",
+// products.js
+const products = [
+  {
+    id: "prod_101",
+    name: "Wireless Headphones",
+    category: "Electronics",
+    price: 2999,
+    image: "https://via.placeholder.com/150",
+    description: "High-quality noise-canceling wireless headphones."
+  },
+  {
+    id: "prod_102",
+    name: "Smart Watch v2",
+    category: "Electronics",
+    price: 4999,
+    image: "https://via.placeholder.com/150",
+    description: "Track steps, heart rate, and notifications."
+  },
+  {
+    id: "prod_103",
+    name: "Classic Denim Jacket",
+    category: "Fashion",
+    price: 1899,
+    image: "https://via.placeholder.com/150",
+    description: "Stylish everyday jacket made with 100% cotton."
+  },
+  {
+    id: "prod_104",
+    name: "Running Sneakers",
+    category: "Fashion",
     price: 2499,
-    image:"../static/p1.jpeg",
-    quantity: 1
+    image: "https://via.placeholder.com/150",
+    description: "Lightweight and breathable athletic shoes."
+  },
+  {
+    id: "prod_105",
+    name: "Ergonomic Office Chair",
+    category: "Home",
+    price: 7999,
+    image: "https://via.placeholder.com/150",
+    description: "Lumbar support chair for long work hours."
+  },
+  {
+    id: "prod_106",
+    name: "Stainless Steel Water Bottle",
+    category: "Home",
+    price: 599,
+    image: "https://via.placeholder.com/150",
+    description: "Insulated 1L bottle keeps liquids cold for 24 hours."
+  }
+];
+
+// code to render and filter products
+const productGrid = document.getElementById('product-grid');
+const searchInput = document.getElementById('search-input');
+const categoryFilter = document.getElementById('category-filter');
+
+// Function to render product cards
+function renderProducts(items) {
+    productGrid.innerHTML = ''; // Clear previous cards
+
+    if (items.length === 0) {
+        productGrid.innerHTML = '<p>No products match your search.</p>';
+        return;
+    }
+
+    items.forEach(product => {
+        productGrid.innerHTML += `
+        <div class="product-card">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p class="category">${product.category}</p>
+            <p class="price">₹${product.price}</p>
+            <button onclick="addToCart('${product.id}')">Add to Cart</button>
+            <button onclick="buyNow('${product.id}')">Buy Now</button>
+        </div>
+        `;
+    });
 }
 
+// master filter function combining search + category
+function filterProducts() {
+    const searchTerm = searchInput.ariaValueMax.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value;
+
+    const filtered = products.filter(product => {
+        // check search match (name or description)
+        const matchesSearch = product.name.toLowerCase().includes(searchTerm) || product.description.toLocaleLowerCase().includes(searchTerm);
+
+        // check category match
+        const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
+
+        return matchesSearch && matchesCategory;
+    });
+
+    renderProducts(filtered);
+}
+
+// Event listeners
+searchInput.addEventListener('input', filterProducts);
+categoryFilter.addEventListener('change', filterProducts);
 
 // Function to display cart items (Used on cart.html)
 function displayCartItems() {
@@ -66,4 +159,10 @@ function buyNow(product) {
 // Attach event listener to the button
 document.getElementById('buy-now-btn').addEventListener('click', () => {
     buyNow(currentProduct);
+});
+
+
+// Initial Render on page load
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts(products);
 });

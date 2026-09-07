@@ -18,23 +18,24 @@
         </nav>
     </header>
 
-    <!-- categories -->
-    <div class="categories">
-        <span>household</span>
-        <span>skincare</span>
-        <span>appliances</span>
-        <span>kids</span>
-    </div>
 
     <!-- Search form and button -->
-    <div id="search-form" class="search-form">
-        <input id="input-form" type="text" placeholder="search...">
-        <span class="search-btn"><button id="search-btn">search</button></span>
+    <div class="filter-controls">
+        <!-- Search Input -->
+        <input type="text" class="search-input" id="search-input" placeholder="Search Products...">
+
+        <!-- Category dropdown -->
+         <select class="category-filter" id="category-filter">
+            <option value="All">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Home">Home</option>
+         </select>
     </div>
 
     <!-- Main container to display the products -->
     <h3 class="grid-title">Products</h3>
-    <main class="product-grid">
+    <main id="product-grid" class="product-grid">
         <div id="product2" class="product-card">
             <div class="image-wrapper">
                 <img src="../static/p1.jpeg" alt="image 1">

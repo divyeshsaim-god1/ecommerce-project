@@ -56,37 +56,51 @@ header h2 {
     gap: 24px;
 }
 
-.search-form {
-    margin-top: 19px;
+.filter-controls {
+    margin: 8px;
     display: flex;
     justify-content: center;
     gap: 8px;
 }
 
-.search-form input {
-    width: 300px;
-    max-width: 100%;
-    font-size: 1.3rem;
+.search-input {
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
     padding: 8px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-}
-
-#search-btn {
-    background-color: green;
-    cursor: pointer;
-    font-size: 1.1rem;
-    border: none;
-    outline: none;
     border-radius: 12px;
-    padding: 10px;
-    transition: 0.2s ease;
 }
 
-#search-btn:hover {
-    background-color: darkgreen;
-    transition: 0.2s ease;
+/* Smooth dropdown when clicked */
+
+.category-filter {
+    font-size: 1.2rem;
+    padding-top: 8px;
+    margin: 2px;
+}
+
+
+
+/* opt into the customizable select standard */
+.category-filter,
+::picker(select) {
+    appearance: base-select;
+}
+
+/* Style and animate the picker (the option wrapper) */
+::picker(select) {
+    transition: opacity 0.3s ease, tranform 0.3s ease;
+    transform-origin: top;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* Define the starting state bofore the picker opens */
+@starting-style {
+    ::picker(select) {
+        opacity: 0;
+        transform: scaleY(0);
+    }
 }
 
 .grid-title {
